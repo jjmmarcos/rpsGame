@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RpgGameService } from './services/rpgGame.service'
+import { RpsGameService } from './services/rpsGame.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
@@ -21,7 +21,7 @@ import{ HttpClientModule } from '@angular/common/http'
     HttpClientModule
   ],
   providers: [
-    RpgGameService
+    RpsGameService
   ],
   bootstrap: [AppComponent]
 })

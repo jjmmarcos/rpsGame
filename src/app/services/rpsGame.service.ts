@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { rpsResult } from '../interfaces/rpsResult.interface';
+import { RpsServerResponse } from '../interfaces/rpsServerResponse.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RpgGameService {
+export class RpsGameService {
   url: string = 'http://localhost/rpsBack/rpsBack.php'
   constructor(private httpClient: HttpClient) { }
 
-  playGame(numberRpsSelected: number): Observable<rpsResult> {
+  playGame(numberRpsSelected: number): Observable<RpsServerResponse> {
     const params = new HttpParams()
       .set('numberRpsSelected', numberRpsSelected);
-    return this.httpClient.get<rpsResult>(this.url, { params });
+    return this.httpClient.get<RpsServerResponse>(this.url, { params });
   }
 }

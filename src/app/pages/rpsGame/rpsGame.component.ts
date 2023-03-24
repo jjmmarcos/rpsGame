@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { rpsResult } from 'src/app/interfaces/rpsResult.interface';
-import { RpgGameService } from 'src/app/services/rpgGame.service';
+import { RpsServerResponse } from 'src/app/interfaces/rpsServerResponse.interface';
+import { RpsGameService } from 'src/app/services/rpsGame.service';
 
 @Component({
   selector: 'app-rpsGame',
@@ -12,15 +12,23 @@ export class RpsGameComponent implements OnInit {
   rightImg: string = 'wait';
   n: number = 0;
   result: string = '';
-  constructor(private rpgGameService: RpgGameService) { }
+  private _gameSaved: any[] = [];
+
+  get gameSaved() {
+    return [...this._gameSaved];
+  }
+
+  constructor(private rpsGameService: RpsGameService) {
+    this._gameSaved = JSON.parse( localStorage.getItem('rpsGame')! ) || [];
+  }
 
   ngOnInit() {
   }
 
   rpsPlay() {
     this.randomTry();
-    this.rpgGameService.playGame(this.n)
-      .subscribe((res: rpsResult) => {
+    this.rpsGameService.playGame(this.n)
+      .subscribe((res: RpsServerResponse) => {
         console.log(res);
         this.result = res.gameResult;
         this.leftImg = this.numberToSelection(this.n);
@@ -47,9 +55,11 @@ export class RpsGameComponent implements OnInit {
     }
   }
 
-  reset() {
-    this.n = 0;
-    this.leftImg = 'wait';
-    this.rightImg = 'wait';
+  saveGame() {
+
+  }
+
+  getGameSaved() {
+
   }
 }
