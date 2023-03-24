@@ -3,32 +3,50 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>Home</ion-title>
+      <ion-title>Rock Paper Scissors</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>Hola soy el home</h1>
+<ion-content>  
   <ion-grid [fixed]="true">
     <ion-row>
       <ion-col>
-        <ion-img size="2" src="../../../assets/left/{{ leftImg }}.png"
-                 (click)="rpsPlay()"></ion-img>
+        <ion-card>
+          <img alt="Left image" 
+               src="../../../assets/left/{{ leftImg }}.png" />
+          <ion-card-header>
+            <ion-card-title>{{ leftImg | titlecase}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
       </ion-col>
-      <ion-col>{{result}}</ion-col>
+
       <ion-col>
-        <ion-img size="2" src="../../../assets/right/{{ rightImg }}.png"></ion-img>
+        <ion-card>
+        <img alt="Left image" 
+             src="../../../assets/right/{{ rightImg }}.png" />
+        <ion-card-header>
+          <ion-card-title>{{ rightImg | titlecase}}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" offset="2">
+        <ion-button (click)="rpsPlay()">Play!</ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button routerLink="/detail">Reset</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="2" offset="2">
-        <ion-button (click)="rpsPlay()">Play!</ion-button>
-      </ion-col>
-      <ion-col size="2" offset="2">
-        <ion-button routerLink="/detail">Reset</ion-button>
+      <ion-col size="8" offset="3">        
+        <h1>{{ result }}</h1>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RpsServerResponse } from 'src/app/interfaces/rpsServerResponse.interface';
+import { rpsGameResult, RpsServerResponse } from 'src/app/interfaces/rpsServerResponse.interface';
 import { RpsGameService } from 'src/app/services/rpsGame.service';
 
 @Component({
@@ -12,14 +12,11 @@ export class RpsGameComponent implements OnInit {
   rightImg: string = 'wait';
   n: number = 0;
   result: string = '';
-  private _gameSaved: any[] = [];
-
-  get gameSaved() {
-    return [...this._gameSaved];
-  }
+  icon: string = '';
+  gameSaved: any[] = [];
 
   constructor(private rpsGameService: RpsGameService) {
-    this._gameSaved = JSON.parse( localStorage.getItem('rpsGame')! ) || [];
+    this.gameSaved = JSON.parse( localStorage.getItem('rpsGame')! ) || [];
   }
 
   ngOnInit() {
@@ -33,6 +30,7 @@ export class RpsGameComponent implements OnInit {
         this.result = res.gameResult;
         this.leftImg = this.numberToSelection(this.n);
         this.rightImg = res.serverSelection;
+        this.saveGame(res);
       })
   }
 
@@ -55,11 +53,18 @@ export class RpsGameComponent implements OnInit {
     }
   }
 
-  saveGame() {
+  saveGame(res: RpsServerResponse) {
+    let item: rpsGameResult = {
+      playerSelection: this.numberToSelection(this.n),
+      rpsServerResponse: res
+    };
 
-  }
+    if(this.gameSaved.length >= 10) {
+      this.gameSaved.splice(0, 0, item); // Add the new item to the first place
+      this.gameSaved.pop(); // Remove the last for have always 10 items
+    }
+      else this.gameSaved.push(item);
 
-  getGameSaved() {
-
+    localStorage.setItem('rpsGame', JSON.stringify(this.gameSaved));
   }
 }
