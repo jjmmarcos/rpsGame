@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RpsGameService } from './services/rpsGame.service';
+import { RpsGameService } from './services/RpsGameService.service';
 
 @Component({
   selector: 'app-root',

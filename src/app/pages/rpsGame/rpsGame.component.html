@@ -8,43 +8,38 @@
 </ion-header>
 
 <ion-content>  
-  <ion-grid [fixed]="true">
-    <ion-row>
-      <ion-col>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col >
         <ion-card>
           <img alt="Left image" 
-               src="../../../assets/left/{{ leftImg }}.png" />
+               src="../../../assets/left/{{ playerChoice }}.png" />
           <ion-card-header>
-            <ion-card-title>{{ leftImg | titlecase}}</ion-card-title>
+            <ion-card-title>{{ playerChoice | titlecase}}</ion-card-title>
           </ion-card-header>
         </ion-card>
+        <ion-card-content>
+          <ion-button (click)="rpsPlay()">Play!</ion-button>
+        </ion-card-content>
       </ion-col>
 
       <ion-col>
         <ion-card>
         <img alt="Left image" 
-             src="../../../assets/right/{{ rightImg }}.png" />
+             src="../../../assets/right/{{ pcChoice }}.png" />
         <ion-card-header>
-          <ion-card-title>{{ rightImg | titlecase}}</ion-card-title>
+          <ion-card-title>{{ pcChoice | titlecase}}</ion-card-title>
         </ion-card-header>
       </ion-card>
+      <ion-card-content>
+        <ion-button (click)="reset()">Reset</ion-button>
+      </ion-card-content>
       </ion-col>
     </ion-row>
   </ion-grid>  
 
   <ion-grid>
-    <ion-row>
-      <ion-col size="4" offset="2">
-        <ion-button (click)="rpsPlay()">Play!</ion-button>
-      </ion-col>
-      <ion-col size="4">
-        <ion-button routerLink="/detail">Reset</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid>
-    <ion-row>
+    <ion-row class="ion-justify-content-center">
       <ion-col size="8" offset="3">        
         <h1>{{ result }}</h1>
       </ion-col>
