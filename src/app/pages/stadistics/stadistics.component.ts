@@ -55,7 +55,7 @@ export class StadisticsComponent implements OnInit {
             easing: 'linear',
             from: 1,
             to: 0,
-            loop: true
+            loop: false
           }
         }
       }
