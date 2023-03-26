@@ -7,7 +7,8 @@ import { RpsServerResponse } from '../interfaces/rpsServerResponse.interface';
   providedIn: 'root'
 })
 export class RpsGameService {
-  url: string = 'http://localhost/rpsBack/rpsBack.php'
+  url: string = 'http://localhost/rpsBack/rpsBack.php';
+  
   constructor(private httpClient: HttpClient) { }
 
   playGame(numberRpsSelected: number): Observable<RpsServerResponse> {

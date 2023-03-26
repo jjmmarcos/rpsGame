@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto'
 import { rpsGameResult } from 'src/app/interfaces/rpsServerResponse.interface';
-import { RpsGameService } from 'src/app/services/RpsGameService.service';
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
@@ -10,7 +9,7 @@ import { RpsGameService } from 'src/app/services/RpsGameService.service';
 export class StatisticsComponent implements OnInit {
   gameSaved: rpsGameResult[] = [];
   gameStadistics: number[] = [];
-  constructor(private rpsGameService: RpsGameService) {
+  constructor() {
     this.gameSaved = JSON.parse( localStorage.getItem('rpsGame')! ) || [];
   }
 

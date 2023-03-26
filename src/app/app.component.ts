@@ -8,17 +8,4 @@ import { RpsGameService } from './services/RpsGameService.service';
   styleUrls: ['./app.component.css'],
   providers: [RpsGameService]
 })
-export class AppComponent {
-  response = "";
-
-  constructor(private http: HttpClient,
-              private rpsGameService: RpsGameService ) { }
-
-  onSend() {
-    let numberRpsSelected: number = 1;
-    this.rpsGameService.playGame(numberRpsSelected)
-      .subscribe( data => {
-        console.log(data);
-      })
-  }
-}
+export class AppComponent { }

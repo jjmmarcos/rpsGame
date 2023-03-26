@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { RpsGameComponent } from './pages/rpsGame/rpsGame.component';
-import { DetailComponent } from './pages/detail/detail.component';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import{ HttpClientModule } from '@angular/common/http'
 
@@ -13,7 +12,6 @@ import{ HttpClientModule } from '@angular/common/http'
   declarations: [
     AppComponent,
     RpsGameComponent,
-    DetailComponent,
     StatisticsComponent
   ],
   imports: [
