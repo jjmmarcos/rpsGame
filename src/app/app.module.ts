@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { RpsGameComponent } from './pages/rpsGame/rpsGame.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
-import{ HttpClientModule } from '@angular/common/http'
+import { StadisticsComponent } from './pages/stadistics/stadistics.component';
+import{ HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     RpsGameComponent,
-    StatisticsComponent
+    StadisticsComponent
   ],
   imports: [
     BrowserModule,

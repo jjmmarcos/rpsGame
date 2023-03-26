@@ -27,7 +27,10 @@ export class RpsGameComponent {
         this.playerChoice = this.numberToSelection(this.randomNumber);
         this.pcChoice = res.serverSelection;
         this.saveGame(res);
-      })
+      },
+      (err) => {
+        console.log('Error');
+      });
   }
 
   reset() {

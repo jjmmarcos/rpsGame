@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RpsGameComponent } from './pages/rpsGame/rpsGame.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
+import { StadisticsComponent } from './pages/stadistics/stadistics.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'stadistics',
-    component: StatisticsComponent
+    component: StadisticsComponent
   },
   {
     path: '**',

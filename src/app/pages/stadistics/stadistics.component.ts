@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto'
 import { rpsGameResult } from 'src/app/interfaces/rpsServerResponse.interface';
 @Component({
-  selector: 'app-statistics',
-  templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.css']
+  selector: 'app-stadistics',
+  templateUrl: './stadistics.component.html',
+  styleUrls: ['./stadistics.component.css']
 })
-export class StatisticsComponent implements OnInit {
+export class StadisticsComponent implements OnInit {
   gameSaved: rpsGameResult[] = [];
   gameStadistics: number[] = [];
   constructor() {
@@ -47,7 +47,18 @@ export class StatisticsComponent implements OnInit {
               data: this.gameStadistics,
               borderWidth: 1
         }]
-       }
+       },
+       options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: true
+          }
+        }
+      }
     });
   }
 
