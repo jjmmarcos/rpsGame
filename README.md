@@ -6,9 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Recommendations for deploy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Download zip or clone.
+2. Generate node_modules `npm install`
+3. Execute with `ng s` or `ng s -o`
+
+## Server recommendations
+1. Download php file from [here](https://github.com/jjmmarcos/rpsBackend)
+2. Create a folder `rpsBack` in `C:\xampp\htdocs`and place the file there.
+3. Use CORS extension for enable receive the response. [extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
+
 
 ## Build
 
