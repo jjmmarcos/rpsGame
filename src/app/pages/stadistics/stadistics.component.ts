@@ -34,30 +34,17 @@ export class StadisticsComponent implements OnInit {
         datasets: [{
               label: "Number of times",
               backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                
-              ],
-              borderColor: [
                 'rgba(75, 192, 192, 1)',
                 'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)'                
+                'rgba(54, 162, 235, 1)' 
+                
               ],
               data: this.gameStadistics,
-              borderWidth: 1
+              hoverOffset: 4
         }]
        },
        options: {
-        animations: {
-          tension: {
-            duration: 1000,
-            easing: 'linear',
-            from: 1,
-            to: 0,
-            loop: false
-          }
-        }
+        events: []
       }
     });
   }
